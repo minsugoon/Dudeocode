@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dudeocode | Special Thanks - Closed Beta Testers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/gh/neodgm/neodgm-webfont@latest/neodgm/style.css" rel="stylesheet">
+    <style>
+        body { background-color: #0f172a; color: white; }
+        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .lang-node { display: none; }
+        .lang-active { display: block; }
+        
+        /* 픽셀 폰트 전용 클래스 */
+        .pixel-text {
+            font-family: 'NeoDunggeunmo', sans-serif;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+        }
+
+        /* 테스터 카드 호버 애니메이션 */
+        .tester-card {
+            transition: all 0.3s ease;
+        }
+        .tester-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.2);
+            border-color: rgba(56, 189, 248, 0.5);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <nav class="sticky top-0 bg-[#0f172a]/80 backdrop-blur-md z-50 border-b border-slate-800">
+        <div class="p-6 flex justify-between items-center max-w-6xl mx-auto">
+            <h1 class="text-2xl font-bold gradient-text"><a href="index.html">Dudeocode</a></h1>
+            
+            <div class="flex items-center space-x-6">
+                <div class="hidden md:flex space-x-4 text-sm">
+                    <span class="lang-node lang-active ko-text">
+                        <a href="index.html" class="hover:text-sky-400 transition mr-4">← 메인으로</a>
+                    </span>
+                    <span class="lang-node en-text">
+                        <a href="index.html" class="hover:text-sky-400 transition mr-4">← Back to Home</a>
+                    </span>
+                </div>
+
+                <div class="flex bg-slate-800 p-1 rounded-lg border border-slate-700">
+                    <button onclick="setLang('ko')" id="btn-ko" class="px-3 py-1 rounded-md text-xs font-bold transition-all bg-sky-500 text-white shadow-sm">
+                        🇰🇷 KR
+                    </button>
+                    <button onclick="setLang('en')" id="btn-en" class="px-3 py-1 rounded-md text-xs font-bold transition-all text-slate-400 hover:text-white">
+                        🇺🇸 EN
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-24 px-6 text-center max-w-4xl mx-auto">
+        <div class="inline-block bg-slate-800/80 border-2 border-slate-700 rounded-2xl p-8 shadow-2xl backdrop-blur-sm">
+            <div class="lang-node lang-active ko-text">
+                <h2 class="pixel-text text-4xl md:text-5xl text-sky-400 mb-6 leading-relaxed">
+                    비공개 테스트에<br>참여해주셔서 감사합니다!
+                </h2>
+                <p class="text-gray-300 text-lg mb-4 leading-relaxed">
+                    블로그를 통해 찾아와 주시고, 구글 플레이 콘솔 비공개 테스트에서<br>
+                    14일간의 여정을 함께해 주신 모든 분들께 깊은 감사를 드립니다.
+                </p>
+                <p class="text-gray-400 text-md">
+                    여러분의 소중한 피드백과 참여가 <span class="text-indigo-400 font-bold">Find Pattern</span>을 완성하는 데 큰 힘이 되었습니다.
+                </p>
+            </div>
+            
+            <div class="lang-node en-text">
+                <h2 class="pixel-text text-3xl md:text-4xl text-sky-400 mb-6 leading-relaxed">
+                    THANK YOU FOR PLAYING<br>OUR CLOSED BETA!
+                </h2>
+                <p class="text-gray-300 text-lg mb-4 leading-relaxed">
+                    We express our deepest gratitude to everyone who joined via our blog<br>
+                    and completed the 14-day journey on the Google Play Console.
+                </p>
+                <p class="text-gray-400 text-md">
+                    Your valuable feedback and participation helped shape <span class="text-indigo-400 font-bold">Find Pattern</span>.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-12 px-6 max-w-5xl mx-auto mb-20">
+        <div class="text-center mb-12">
+            <h3 class="text-2xl font-bold gradient-text lang-node lang-active ko-text">명예의 테스터</h3>
+            <h3 class="text-2xl font-bold gradient-text lang-node en-text">Hall of Fame Testers</h3>
+            <div class="w-16 h-1 bg-sky-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            
+            <div class="tester-card bg-slate-800/40 border border-slate-700/60 rounded-xl p-4 flex items-center justify-center text-center">
+                <span class="pixel-text text-sky-100 text-lg">TesterName1</span>
+            </div>
+            
+            <div class="tester-card bg-slate-800/40 border border-slate-700/60 rounded-xl p-4 flex items-center justify-center text-center">
+                <span class="pixel-text text-sky-100 text-lg">GameMaster99</span>
+            </div>
+
+            <div class="tester-card bg-slate-800/40 border border-slate-700/60 rounded-xl p-4 flex items-center justify-center text-center">
+                <span class="pixel-text text-sky-100 text-lg">PixelHero</span>
+            </div>
+
+            <div class="tester-card bg-slate-800/40 border border-slate-700/60 rounded-xl p-4 flex items-center justify-center text-center">
+                <span class="pixel-text text-sky-100 text-lg">CodeBreaker</span>
+            </div>
+
+            </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-500 text-sm border-t border-slate-800 mt-auto">
+        <p>&copy; 2026 ⓒ드디어코드(Dudeocode). All rights reserved.</p>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            const koNodes = document.querySelectorAll('.ko-text');
+            const enNodes = document.querySelectorAll('.en-text');
+            const btnKo = document.getElementById('btn-ko');
+            const btnEn = document.getElementById('btn-en');
+
+            if (lang === 'ko') {
+                koNodes.forEach(n => n.classList.add('lang-active'));
+                enNodes.forEach(n => n.classList.remove('lang-active'));
+                btnKo.className = 'px-3 py-1 rounded-md text-xs font-bold transition-all bg-sky-500 text-white shadow-sm';
+                btnEn.className = 'px-3 py-1 rounded-md text-xs font-bold transition-all text-slate-400 hover:text-white';
+            } else {
+                enNodes.forEach(n => n.classList.add('lang-active'));
+                koNodes.forEach(n => n.classList.remove('lang-active'));
+                btnEn.className = 'px-3 py-1 rounded-md text-xs font-bold transition-all bg-sky-500 text-white shadow-sm';
+                btnKo.className = 'px-3 py-1 rounded-md text-xs font-bold transition-all text-slate-400 hover:text-white';
+            }
+        }
+    </script>
+</body>
+</html>
