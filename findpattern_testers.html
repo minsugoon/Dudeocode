@@ -20,10 +20,31 @@
         .tester-card {
             transition: all 0.3s ease;
         }
-        .tester-card:hover {
+        .tester-card:hover,
+        .tester-card:active {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.2);
             border-color: rgba(56, 189, 248, 0.5);
+        }
+
+        .tester-card {
+            position: relative;
+        }
+        /* 메달: 닉네임 왼쪽에 절대 위치, 평소엔 숨김 */
+        .tester-medal {
+            position: absolute;
+            left: 12px;
+            font-size: 1.4rem;
+            line-height: 1;
+            opacity: 0;
+            transform: scale(0.3);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            pointer-events: none;
+        }
+        .tester-card:hover .tester-medal,
+        .tester-card:active .tester-medal {
+            opacity: 1;
+            transform: scale(1);
         }
     </style>
 </head>
@@ -119,6 +140,7 @@
             const grid = document.getElementById('tester-grid');
             grid.innerHTML = TESTERS.map(name => `
                 <div class="tester-card bg-slate-800/40 border border-slate-700/60 rounded-xl p-4 flex items-center justify-center text-center">
+                    <span class="tester-medal">🎖️</span>
                     <span class="pixel-text text-sky-100 text-lg">${name}</span>
                 </div>
             `).join('');
