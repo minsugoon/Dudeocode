@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dudeocode | Find Pattern - Official Site</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/gh/neodgm/neodgm-webfont@latest/neodgm/style.css" rel="stylesheet">
     <style>
         body { background-color: #0f172a; color: white; }
         .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -12,6 +13,39 @@
         .lang-active { display: block; }
         /* 웹킷 브라우저에서 summary 기본 화살표 숨기기 */
         summary::-webkit-details-marker { display: none; }
+
+        /* 픽셀 폰트 */
+        .pixel-text {
+            font-family: 'NeoDunggeunmo', sans-serif;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+        }
+
+        /* 테스터 카드 */
+        .tester-card {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .tester-card:hover,
+        .tester-card:active {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.2);
+            border-color: rgba(56, 189, 248, 0.5);
+        }
+        .tester-medal {
+            position: absolute;
+            left: 12px;
+            font-size: 1.4rem;
+            line-height: 1;
+            opacity: 0;
+            transform: scale(0.3);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            pointer-events: none;
+        }
+        .tester-card:hover .tester-medal,
+        .tester-card:active .tester-medal {
+            opacity: 1;
+            transform: scale(1);
+        }
     </style>
 </head>
 <body class="font-sans antialiased">
@@ -128,7 +162,8 @@
                         </div>
                     </details>
 
-                    <a href="findpattern_testers.html" class="flex justify-between items-center w-full bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/30 text-sky-400 p-4 rounded-lg transition-all group">
+                    <!-- ✅ 버튼: 이제 새 페이지 대신 같은 페이지 내 #testers 섹션으로 이동 -->
+                    <a href="#testers" class="flex justify-between items-center w-full bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/30 text-sky-400 p-4 rounded-lg transition-all group">
                         <span class="lang-node lang-active ko-text font-bold">🏆 명예의 비공개 테스터 명단</span>
                         <span class="lang-node en-text font-bold">🏆 Hall of Fame Testers</span>
                         <span class="transform transition-transform group-hover:translate-x-1">
@@ -136,11 +171,54 @@
                         </span>
                     </a>
                 </div>
-                </div>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 px-6 bg-slate-900/50">
+    <!-- ✅ 새로 추가된 테스터 명단 섹션 (Contact 위) -->
+    <section id="testers" class="py-20 px-6 bg-slate-900/50">
+        <div class="max-w-5xl mx-auto">
+
+            <!-- 헤더 박스 -->
+            <div class="text-center mb-12">
+                <div class="inline-block bg-slate-800/80 border-2 border-slate-700 rounded-2xl p-8 shadow-2xl backdrop-blur-sm mb-10">
+                    <div class="lang-node lang-active ko-text">
+                        <h2 class="pixel-text text-3xl md:text-4xl text-sky-400 mb-4 leading-relaxed">
+                            비공개 테스트 참여에<br>감사드립니다.
+                        </h2>
+                        <p class="text-gray-300 text-base mb-3 leading-relaxed">
+                            파인드 패턴(Find Pattern) 구글 플레이 콘솔 비공개 테스트에<br>
+                            14일간의 여정을 함께해 주신 모든 분께 깊이 감사드립니다.
+                        </p>
+                        <p class="text-gray-400 text-sm">
+                            여러분의 소중한 피드백과 참여가 <span class="text-indigo-400 font-bold">Find Pattern</span>을 완성하는 데 큰 힘이 되었습니다.
+                        </p>
+                    </div>
+                    <div class="lang-node en-text">
+                        <h2 class="pixel-text text-2xl md:text-3xl text-sky-400 mb-4 leading-relaxed">
+                            THANK YOU FOR PLAYING<br>OUR CLOSED BETA!
+                        </h2>
+                        <p class="text-gray-300 text-base mb-3 leading-relaxed">
+                            We express our deepest gratitude to everyone who joined via our blog<br>
+                            and completed the 14-day journey on the Google Play Console.
+                        </p>
+                        <p class="text-gray-400 text-sm">
+                            Your valuable feedback and participation helped shape <span class="text-indigo-400 font-bold">Find Pattern</span>.
+                        </p>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-bold gradient-text lang-node lang-active ko-text">명예의 테스터</h3>
+                <h3 class="text-2xl font-bold gradient-text lang-node en-text">Hall of Fame Testers</h3>
+                <div class="w-16 h-1 bg-sky-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- 테스터 카드 그리드 -->
+            <div id="tester-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 px-6">
         <div class="max-w-4xl mx-auto text-center">
             <h3 class="text-3xl font-bold mb-6 lang-node lang-active ko-text">Contact</h3>
             <h3 class="text-3xl font-bold mb-6 lang-node en-text">Contact</h3>
@@ -163,6 +241,33 @@
     </footer>
 
     <script>
+        // ====================================================
+        // ✅ 테스터 닉네임만 이 배열에 추가하면 카드가 자동 생성됩니다
+        // ====================================================
+        const TESTERS = [
+            "ROSSO",
+            "AIRDEOK",
+            "WHITERAIN",
+            "JJOIP",
+            "WASDYWHO",
+            "SOMVANG",
+            "NYK",
+            "필립",
+            // "닉네임2",
+            // 이런 식으로 계속 추가하세요
+        ];
+        // ====================================================
+
+        function renderTesters() {
+            const grid = document.getElementById('tester-grid');
+            grid.innerHTML = TESTERS.map(name => `
+                <div class="tester-card bg-slate-800/40 border border-slate-700/60 rounded-xl p-4 flex items-center justify-center text-center">
+                    <span class="tester-medal">🎖️</span>
+                    <span class="pixel-text text-sky-100 text-lg">${name}</span>
+                </div>
+            `).join('');
+        }
+
         function setLang(lang) {
             const koNodes = document.querySelectorAll('.ko-text');
             const enNodes = document.querySelectorAll('.en-text');
@@ -181,6 +286,8 @@
                 btnKo.className = 'px-3 py-1 rounded-md text-xs font-bold transition-all text-slate-400 hover:text-white';
             }
         }
+
+        renderTesters();
     </script>
 </body>
 </html>
